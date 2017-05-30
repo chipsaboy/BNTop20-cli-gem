@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'httparty'
+require 'open-uri'
+require 'nokogiri'
+require "bundler/setup"
+require "BNTop20"
+
+require './lib/BNTop20'
+
+BNTop20::CLI.new.call
