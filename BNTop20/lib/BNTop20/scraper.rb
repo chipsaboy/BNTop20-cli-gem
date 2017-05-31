@@ -11,7 +11,7 @@ class BNTop20::Scraper
 	def top20
 		scrape_html.each do |b|
 			url = b.css("p.product-info-title").attribute("href")
-			BNTop20:Book.new(url)
+			BNTop20::Book.new(url)
 		end
 	end
 
