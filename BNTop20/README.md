@@ -1,8 +1,6 @@
 # BNTop20
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/BNTop20`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem lists the top 20 bestselling books at Barnes and Noble. You can get information on the author, date published, average rating, price and the current discounted price.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You will be given a list of 20 books to choose from, follow the prompts to make a selection and find out more about the book you are interested in.
 
 ## Development
 
