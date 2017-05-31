@@ -19,7 +19,7 @@ class BNTop20::Book
 
 	def web_url
 		book_url = self.url
-		@web_url = Nokogiri::HTML(open("http://www.barnesandnoble.com#{book_url}"))
+		@web_url = Nokogiri::HTML(open("https://www.barnesandnoble.com#{book_url}"))
 	end
 
 	def name

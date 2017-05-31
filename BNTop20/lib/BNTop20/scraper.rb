@@ -5,12 +5,12 @@ class BNTop20::Scraper
 	end
 
 	def scrape_html
-		self.get_html.css("ul#listView")
+		self.get_html.css("ul#listView").css("li.clearer")
 	end
 
 	def top20
 		scrape_html.each do |b|
-			url = b.css("p.product-info-title").attribute("href")
+			url = b.css("p.product-info-title").css("a").attribute("href").value
 			BNTop20::Book.new(url)
 		end
 	end

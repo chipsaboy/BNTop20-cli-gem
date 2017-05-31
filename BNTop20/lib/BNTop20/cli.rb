@@ -16,7 +16,13 @@ class BNTop20::CLI
 
 
 	def start
-		puts ""
+		list_books
+	end
+
+	def list_books
+		BNTop20::Book.all.each.with_index(1) do |book, i|
+			puts "#{i}. #{book.name}"
+		end
 	end
 
 
