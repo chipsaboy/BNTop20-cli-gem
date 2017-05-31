@@ -8,5 +8,11 @@ class BNTop20::Scraper
 		self.get_html.css("ul#listView")
 	end
 
+	def top20
+		scrape_html.each do |b|
+			url = b.css("p.product-info-title").attribute("href")
+			BNTop20:Book.new(url)
+		end
+	end
 
 end
