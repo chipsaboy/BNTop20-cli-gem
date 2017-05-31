@@ -1,14 +1,28 @@
 class BNTop20::CLI
 
 	def call
-		BNTop20::Scraper.new
-		puts "Here are the top 20 bestselling books at Barnes and Noble:"
+		BNTop20::Scraper.new.top20
+		welcome_message
 		start
 	end
 
+	def welcome_message
+		puts(<<-EOT)
+			___  ____ ____ _  _ ____ ____    ____ _  _ ___     _  _ ____ ___  _    ____
+			|__| |__| |__/ |\ | |___ |__     |__| |\ | |  \    |\ | |  | |__| |    |___
+			|__| |  | |  \ | \| |___ ___|    |  | | \| |__/    | \| |__| |__| |___ |___
+
+			___ ____ ___        ___  ____ ____ ___ ____ ____ _    _    ____ ____ ____
+			 |  |  | |__|       |__| |___ |__   |  |__  |___ |    |    |___ |__/ |__
+			 |  |__| |          |__| |___ ___|  |  ___| |___ |___ |___ |___ |  \ ___|
+		EOT
+		puts "----------------------------------------------------------------------"
+		puts ""
+	end
+
+
 	def start
 		puts ""
-
 	end
 
 
