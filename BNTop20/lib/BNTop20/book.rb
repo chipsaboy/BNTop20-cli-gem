@@ -23,19 +23,19 @@ class BNTop20::Book
 	end
 
 	def name
-		@name = web_url.css("h1").text.strip
+		@name = web_url.css("h1").text
 	end
 
 	def author
-		@author = web_url.css("span.contributors a").text.strip
+		@author = web_url.css("span.contributors a").text
 	end
 
 	def price
-		@price = web_url.css("span.price.current-price").text.strip
+		@price = web_url.css("span.price.current-price").text
 	end
 
 	def release_date
-		@release_date = web_url.xpath("//section[@id='additionalProductInfo']/dl/dd[3]").text.strip
+		@release_date = web_url.xpath("//section[@id='additionalProductInfo']/dl/dd[3]").text
 	end
 
 	def old_price
@@ -43,15 +43,15 @@ class BNTop20::Book
 	end
 
 	def discount
-		@discount = web_url.css("span.discount-amount").text.strip
+		@discount = web_url.css("span.discount-amount").text
 	end
 
 	def rating
-		@rating = web_url.css("span.average").text.strip
+		@rating = web_url.css("span.average").text
 	end
 
 	def overview
-		@overview = web_url.css("div#productInfoOverview p").text.strip
+		@overview = web_url.css("div#productInfoOverview p").text
 	end
 
 
