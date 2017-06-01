@@ -31,7 +31,7 @@ class BNTop20::Book
 	end
 
 	def price
-		@price = web_url.css("span.price current-price").text.strip
+		@price = web_url.css("span.price.current-price").text.strip
 	end
 
 	def release_date
@@ -39,7 +39,7 @@ class BNTop20::Book
 	end
 
 	def old_price
-		@old_price = web_url.css("span.old-price").text.strip
+		@old_price = web_url.css("span.old-price").text
 	end
 
 	def discount
@@ -47,11 +47,11 @@ class BNTop20::Book
 	end
 
 	def rating
-		@rating = web_url.css("span.gig-average-review").text
+		@rating = web_url.css("span.average").text.strip
 	end
 
 	def overview
-		@overview = web_url.css("div#overview").css("p").text
+		@overview = web_url.css("div#productInfoOverview p").text.strip
 	end
 
 

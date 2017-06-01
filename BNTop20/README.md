@@ -1,6 +1,6 @@
 # BNTop20
 
-This gem lists the top 20 bestselling books at Barnes and Noble. You can get information on the author, date published, average rating, price and the current discounted price.
+This gem lists the top 20 bestselling books at Barnes and Noble. You can get information on the author, date published, average rating, price, the current discounted price and an overview of the book.
 
 ## Installation
 
