@@ -26,15 +26,23 @@ class BNTop20::CLI
 			input = gets.strip.downcase
 
 			if input == "list"
+				puts ""
 				list_books
 			elsif input.to_i > 0
 				book = BNTop20::Book.find(input.to_i)
 				print_info(book)
 			elsif input == "exit"
-				puts "Hasta la vista baby."
+				puts ""
+				puts "Remember, reading is fundamental!"
+				puts "Goodbye"
+				puts ""
 			else
-				puts "Ok, now playing Justin Bieber: What do you mean?"
+				puts ""
+				puts "Excuse me? Let's try that again."
+				puts ""
 			end
+			puts ""
+			puts "Type 'list' to see the list again, type 'exit' to quit"
 		end
 	end
 
@@ -45,8 +53,9 @@ class BNTop20::CLI
 	end
 
 	def print_info(book)
+		puts "-------------- Name ----------------"
 		puts ""
-		puts "---------- #{book.name} ------------"
+		puts "#{book.name}"
 		puts ""
 		puts "------------- Author ---------------"
 		puts ""

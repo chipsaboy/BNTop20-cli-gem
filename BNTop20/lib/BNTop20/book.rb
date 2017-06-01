@@ -31,7 +31,7 @@ class BNTop20::Book
 	end
 
 	def price
-		@price = web_url.css("span.price.current-price").text
+		@price = web_url.xpath("//*[@id='prodInfoContainer']/form[1]/p/span[1]").text
 	end
 
 	def release_date
@@ -47,7 +47,7 @@ class BNTop20::Book
 	end
 
 	def rating
-		@rating = web_url.css("span.average").text
+		@rating = web_url.xpath("/html/body/main/main/section/div[7]/div[1]/span[2]/span[1]").text
 	end
 
 	def overview
