@@ -19,11 +19,23 @@ class BNTop20::CLI
 		list_books
 
 		input = nil
-		until input = "exit"
+		while input != "exit"
 			puts "----------------------------------------------"
 			puts "Which book do you want more information about?"
 			puts "----------------------------------------------"
 			input = gets.strip.downcase
+
+			if input == "list"
+				list_books
+			elsif input.to_i > 0
+				book = BNTop20::Book.find(input.to_i)
+				print_info(book)
+			elsif input == "exit"
+				puts "Hasta la vista baby."
+			else
+				puts "Ok, now playing Justin Bieber: What do you mean?"
+			end
+		end
 	end
 
 	def list_books
@@ -36,13 +48,13 @@ class BNTop20::CLI
 		puts ""
 		puts "---------- #{book.name} ------------"
 		puts ""
-		puts "Author:    	#{book.author}"
+		puts "Author:     #{book.author}"
 		puts "Price:        #{book.price}"
 		puts "Discount:     #{book.discount}"
 		puts "List Price:   #{book.old_price}"
 		puts "Rating:       #{book.rating} stars"
-		puts "Published: 	#{book.release_date}"
-		puts "URL:          #{book.url}"
+		puts "Published:   #{book.release_date}"
+		puts "URL:          www.barnesandnoble.com#{book.url}"
 		puts ""
 		puts "------------- Summary --------------"
 		puts ""
@@ -50,6 +62,6 @@ class BNTop20::CLI
 		puts ""
 	end
 
-
-
 end
+
+
