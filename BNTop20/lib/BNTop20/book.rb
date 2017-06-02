@@ -22,8 +22,8 @@ class BNTop20::Book
 	end
 
 	def self.print_all
-		all.each_with_index(1) do |book, i|
-			puts "#{i}. #{book.name}"
+		all.each_with_index do |book, i|
+			puts "#{i+1}. #{book_info[:name]}"
 		end
 	end
 

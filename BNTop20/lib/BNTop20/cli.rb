@@ -1,7 +1,7 @@
 class BNTop20::CLI
 
 	def call
-		BNTop20::Scraper.new.top20
+		BNTop20::Scraper.scrape_books
 		welcome_message
 		start
 	end
@@ -54,7 +54,7 @@ class BNTop20::CLI
 	def print_info(book)
 		puts "-------------- Name ----------------"
 		puts ""
-		puts "#{book.name}"
+		puts "#{book.price}"
 		puts ""
 		puts "------------- Author ---------------"
 		puts ""
@@ -78,7 +78,7 @@ class BNTop20::CLI
 		puts ""
 		puts "------------ Published -------------"
 		puts ""
-		puts "#{book.release_date}"
+		puts "#{book.pub_date}"
 		puts ""
 		puts "--------------- URL ----------------"
 		puts ""
