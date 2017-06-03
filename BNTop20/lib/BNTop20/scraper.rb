@@ -1,7 +1,7 @@
 class BNTop20::Scraper
 
 	def self.scrape_books
-		book_info = {}
+		book_info = []
 		index_html = Nokogiri::HTML(open("https://www.barnesandnoble.com/b/books/_/N-1fZ29Z8q8?Nrpp=20&page=1"))
 		index_html.css("ul#listView").css("li.clearer").collect do |book|
 			book_info ={
@@ -21,5 +21,7 @@ class BNTop20::Scraper
 			book_info
 		end
 	end
+
+
 
 end

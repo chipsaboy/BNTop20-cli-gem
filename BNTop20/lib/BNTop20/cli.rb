@@ -1,7 +1,7 @@
 class BNTop20::CLI
 
 	def call
-		BNTop20::Scraper.scrape_books
+		BNTop20::Scraper.new.scrape_books
 		welcome_message
 		start
 	end

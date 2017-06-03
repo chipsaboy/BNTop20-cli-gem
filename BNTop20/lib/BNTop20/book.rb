@@ -4,14 +4,9 @@ class BNTop20::Book
 
 	@@all = []
 
-	def initialize(attributes)
-		attributes.each do |attribute_name, attribute_value|
-			self.send("#{attribute_name}=", attribute_value)
-		end
-
-		@@all << self
-
+	def initialize
 	end
+
 
 	def self.all
 		@@all
@@ -19,12 +14,6 @@ class BNTop20::Book
 
 	def self.find(i)
 		self.all[i-1]
-	end
-
-	def self.print_all
-		all.each_with_index do |book, i|
-			puts "#{i+1}. #{book_info[:name]}"
-		end
 	end
 
 
