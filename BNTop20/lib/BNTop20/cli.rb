@@ -31,6 +31,8 @@ class BNTop20::CLI
 			elsif input.to_i > 0
 				book = BNTop20::Book.find(input.to_i)
 				print_info(book)
+				puts ""
+				puts "Type 'list' to see the list again, type 'exit' to quit"
 			elsif input == "exit"
 				puts ""
 				puts "Remember, reading is fundamental!"
@@ -40,9 +42,8 @@ class BNTop20::CLI
 				puts ""
 				puts "Excuse me? Let's try that again."
 				puts ""
+				puts "Type 'list' to see the list again, type 'exit' to quit"
 			end
-			puts ""
-			puts "Type 'list' to see the list again, type 'exit' to quit"
 		end
 	end
 
