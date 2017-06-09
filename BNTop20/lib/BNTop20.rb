@@ -3,6 +3,7 @@ end
 
 require 'open-uri'
 require 'nokogiri'
+require 'pry'
 
 require_relative "./BNTop20/version"
 require_relative "./BNTop20/cli"

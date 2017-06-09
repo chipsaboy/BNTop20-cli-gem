@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "./lib/BNTop20"
+require_relative "../lib/BNTop20"
+
 
 BNTop20::CLI.new.call
+

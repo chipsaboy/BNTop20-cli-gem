@@ -28,8 +28,10 @@ class BNTop20::CLI
 			if input == "list"
 				puts ""
 				list_books
-			elsif input.to_i > 0
+			elsif input.to_i.between?(1, BNTop20::Book.all.count)
 				book = BNTop20::Book.find(input.to_i)
+				BNTop20::Scraper.scrape_book_details(book)
+				binding.pry
 				print_info(book)
 				puts ""
 				puts "Type 'list' to see the list again, type 'exit' to quit"
@@ -76,7 +78,11 @@ class BNTop20::CLI
 		puts ""
 		puts "------------- Rating ---------------"
 		puts ""
-		puts "#{book.rating} out of 5"
+		if book.rating == ""
+			puts "Not rated"
+		else
+			puts "#{book.rating} out of 5"
+		end
 		puts ""
 		puts "------------ Published -------------"
 		puts ""
