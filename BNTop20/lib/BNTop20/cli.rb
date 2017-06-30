@@ -31,7 +31,6 @@ class BNTop20::CLI
 			elsif input.to_i.between?(1, BNTop20::Book.all.count)
 				book = BNTop20::Book.find(input.to_i)
 				BNTop20::Scraper.scrape_book_details(book)
-				binding.pry
 				print_info(book)
 				puts ""
 				puts "Type 'list' to see the list again, type 'exit' to quit"
